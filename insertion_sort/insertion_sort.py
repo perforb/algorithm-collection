@@ -2,7 +2,22 @@
 # -*- coding: utf-8 -*-
 
 
-def insertion_sort(inputs):
+def insertion_sort(inputs, distance):
+    result = list(inputs)
+    for i in range(distance, len(result)):
+        v = result[i]
+        j = (i - distance)
+        while j >= 0 and result[j] > v:
+            result[j + distance] = result[j]
+            j -= distance
+
+        result[j + distance] = v
+        print(result)
+
+    return result
+
+
+def insertion_sort2(inputs):
     result = list(inputs)
     for i in range(1, len(result)):
         v = result[i]
@@ -17,7 +32,7 @@ def insertion_sort(inputs):
     return result
 
 
-def another_insertion_sort(inputs):
+def insertion_sort3(inputs):
     result = list(inputs)
     for i in range(1, len(result)):
         v = result[i]
@@ -37,8 +52,11 @@ def main():
     numbers = [8, 3, 1, 5, 2, 1]
     alphabets = ["C", "B", "A", "Z", "A", "K"]
 
-    print("numbers: {0}\n".format(insertion_sort(numbers)))
-    print("alphabets: {0}".format(insertion_sort(alphabets)))
+    print(numbers)
+    print("numbers: {0}".format(insertion_sort(numbers, 3)))
+    print()
+    print(alphabets)
+    print("alphabets: {0}".format(insertion_sort(alphabets, 1)))
 
 
 if __name__ == "__main__":
