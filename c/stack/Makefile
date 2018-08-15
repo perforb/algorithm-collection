@@ -9,7 +9,7 @@ $(PROGRAM): main.c stack.c
 	$(CC) main.c stack.c -o $(PROGRAM)
 
 clean:
-	rm -f *.o *.exe
+	rm -f *.o *.exe $(PROGRAM)
 
 .PHONY: \
 	all \

@@ -4,10 +4,10 @@
 typedef struct {
     int top;
     int elements[1000];
-} stack;
+} Stack;
 
-void push(stack *s, int number);
+void push(Stack *s, int number);
 
-int pop(stack *s);
+int pop(Stack *s);
 
 #endif
