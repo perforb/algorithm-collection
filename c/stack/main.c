@@ -1,21 +1,5 @@
-#include<stdio.h>
-
-typedef struct {
-    int top;
-    int elements[1000];
-} stack;
-
-void push(stack *s, int number) {
-    s->top++;
-    s->elements[s->top] = number;
-}
-
-int pop(stack *s) {
-    if (s->top <= 0) {
-        return s->elements[0];
-    }
-    return s->elements[s->top--];
-}
+#include <stdio.h>
+#include "stack.h"
 
 int main(int argc, char const *argv[]) {
     stack s = {
