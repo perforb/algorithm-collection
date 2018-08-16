@@ -6,8 +6,8 @@ typedef struct {
     int elements[1000];
 } Stack;
 
-void push(Stack *s, int number);
+void push(Stack *stack, int number);
 
-int pop(Stack *s);
+int pop(Stack *stack);
 
 #endif
