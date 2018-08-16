@@ -1,6 +1,6 @@
-CC      = gcc
-CFLAGS  = -g -Wall -Wextra
-OBJS    = main.o stack.o
+CC     = gcc
+CFLAGS = -g -Wall -Wextra
+OBJS   = main.o stack.o
 
 all: stack
 
