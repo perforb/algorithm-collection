@@ -3,60 +3,54 @@
 
 
 def insertion_sort(inputs, distance):
-    result = list(inputs)
-    for i in range(distance, len(result)):
-        v = result[i]
+    for i in range(distance, len(inputs)):
+        v = inputs[i]
         j = (i - distance)
-        while j >= 0 and result[j] > v:
-            result[j + distance] = result[j]
+        while j >= 0 and inputs[j] > v:
+            inputs[j + distance] = inputs[j]
             j -= distance
 
-        result[j + distance] = v
-        print(result)
+        inputs[j + distance] = v
+        print(inputs)
 
-    return result
+    return inputs
 
 
 def insertion_sort2(inputs):
-    result = list(inputs)
-    for i in range(1, len(result)):
-        v = result[i]
+    for i in range(1, len(inputs)):
+        v = inputs[i]
         j = (i - 1)
-        while j >= 0 and result[j] > v:
-            result[j + 1] = result[j]
+        while j >= 0 and inputs[j] > v:
+            inputs[j + 1] = inputs[j]
             j -= 1
 
-        result[j + 1] = v
-        print(result)
+        inputs[j + 1] = v
+        print(inputs)
 
-    return result
+    return inputs
 
 
 def insertion_sort3(inputs):
-    result = list(inputs)
-    for i in range(1, len(result)):
-        v = result[i]
+    for i in range(1, len(inputs)):
+        v = inputs[i]
         for j in range((i - 1), -2, -1):
-            if j >= 0 and result[j] > v:
-                result[j + 1] = result[j]
+            if j >= 0 and inputs[j] > v:
+                inputs[j + 1] = inputs[j]
             else:
                 break
 
-        result[j + 1] = v
-        print(result)
+        inputs[j + 1] = v
+        print(inputs)
 
-    return result
+    return inputs
 
 
 def main():
-    numbers = [8, 3, 1, 5, 2, 1]
-    alphabets = ["C", "B", "A", "Z", "A", "K"]
+    numbers = insertion_sort([8, 3, 1, 5, 2, 1], 1)
+    print(f'numbers: {numbers}\n')
 
-    print(numbers)
-    print("numbers: {0}".format(insertion_sort(numbers, 3)))
-    print()
-    print(alphabets)
-    print("alphabets: {0}".format(insertion_sort(alphabets, 1)))
+    alphabets = insertion_sort(["C", "B", "A", "Z", "A", "K"], 1)
+    print(f'alphabets: {alphabets}')
 
 
 if __name__ == "__main__":

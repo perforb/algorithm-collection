@@ -6,11 +6,10 @@ from insertion_sort import insertion_sort
 
 
 def shell_sort(inputs):
-    result = list(inputs)
     g = distances(len(inputs))
     for h in reversed(g):
-        result = insertion_sort(result, h)
-    return result
+        inputs = insertion_sort(inputs, h)
+    return inputs
 
 
 def distances(max):
@@ -23,22 +22,16 @@ def distances(max):
 
 
 def main():
-    numbers = [8, 3, 1, 5, 2, 1]
-    print(numbers)
-    numbers_result = shell_sort(numbers)
-    print("numbers: {0}".format(numbers_result))
+    numbers = shell_sort([8, 3, 1, 5, 2, 1])
+    print(f"numbers: {numbers}\n")
 
-    print()
-
-    alphabets = ["C", "B", "A", "Z", "A", "K"]
-    alphabets_result = shell_sort(alphabets)
-    print("alphabets: {0}".format(alphabets_result))
+    alphabets = shell_sort(["C", "B", "A", "Z", "A", "K"])
+    print(f"alphabets: {alphabets}")
 
 
 if __name__ == "__main__":
     main()
 
-# [8, 3, 1, 5, 2, 1]
 # [2, 3, 1, 5, 8, 1]
 # [2, 1, 1, 5, 8, 3]
 # [1, 2, 1, 5, 8, 3]

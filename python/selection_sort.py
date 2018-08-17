@@ -3,45 +3,32 @@
 
 
 def selection_sort(inputs):
-    result = list(inputs)
-    size = len(result)
+    size = len(inputs)
     swap_count = 0
     for i in range(0, size):
         min_index = i
         for j in range(i, size):
-            if result[j] < result[min_index]:
+            if inputs[j] < inputs[min_index]:
                 min_index = j
-        result[i], result[min_index] = result[min_index], result[i]
+        inputs[i], inputs[min_index] = inputs[min_index], inputs[i]
         if i != min_index:
             swap_count += 1
-        print(result)
+        print(inputs)
 
-    return result, swap_count
+    return inputs, swap_count
 
 
 def main():
-    numbers = [8, 3, 1, 5, 2, 1]
-    print(numbers)
-    numbers_result = selection_sort(numbers)
-    print("numbers: {0}, swap_count: {1}".format(
-        numbers_result[0],
-        numbers_result[1]
-    ))
+    numbers = selection_sort([8, 3, 1, 5, 2, 1])
+    print(f"numbers: {numbers[0]}, swap_count: {numbers[1]}\n")
 
-    print()
-
-    alphabets = ["C", "B", "A", "Z", "A", "K"]
-    alphabets_result = selection_sort(alphabets)
-    print("alphabets: {0}, swap_count: {1}".format(
-        alphabets_result[0],
-        alphabets_result[1]
-    ))
+    alphabets = selection_sort(["C", "B", "A", "Z", "A", "K"])
+    print(f"alphabets: {alphabets[0]}, swap_count: {alphabets[1]}")
 
 
 if __name__ == "__main__":
     main()
 
-# [8, 3, 1, 5, 2, 1]
 # [1, 3, 8, 5, 2, 1]
 # [1, 1, 8, 5, 2, 3]
 # [1, 1, 2, 5, 8, 3]

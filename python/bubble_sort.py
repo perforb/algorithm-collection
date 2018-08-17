@@ -3,8 +3,7 @@
 
 
 def bubble_sort(inputs):
-    result = list(inputs)
-    last_index = len(result) - 1
+    last_index = len(inputs) - 1
     swap_count = 0
     swapped = True
     for i in range(0, last_index):
@@ -12,32 +11,22 @@ def bubble_sort(inputs):
             break
         swapped = False
         for j in range(last_index, i, -1):
-            if result[j] < result[j - 1]:
-                result[j], result[j - 1] = result[j - 1], result[j]
+            if inputs[j] < inputs[j - 1]:
+                inputs[j], inputs[j - 1] = inputs[j - 1], inputs[j]
                 swapped = True
                 swap_count += 1
 
-            print(result)
+            print(inputs)
 
-    return result, swap_count
+    return inputs, swap_count
 
 
 def main():
-    numbers = [8, 3, 1, 5, 2, 1]
-    numbers_result = bubble_sort(numbers)
-    print("numbers: {0}, swap_count: {1}".format(
-        numbers_result[0],
-        numbers_result[1]
-    ))
+    numbers = bubble_sort([8, 3, 1, 5, 2, 1])
+    print(f'numbers: {numbers[0]}, swap_count: {numbers[1]}\n')
 
-    print()
-
-    alphabets = ["C", "B", "A", "Z", "A", "K"]
-    alphabets_result = bubble_sort(alphabets)
-    print("alphabets: {0}, swap_count: {1}".format(
-        alphabets_result[0],
-        alphabets_result[1]
-    ))
+    alphabets = bubble_sort(["C", "B", "A", "Z", "A", "K"])
+    print(f'alphabets: {alphabets[0]}, swap_count: {alphabets[1]}')
 
 
 if __name__ == "__main__":
