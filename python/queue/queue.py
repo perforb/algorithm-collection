@@ -21,6 +21,9 @@ class Task:
     def total_time(self, remaining_time):
         self._total_time = remaining_time
 
+    def __str__(self):
+        return f"[name:{self._name}, total_time:{self._total_time}]"
+
 
 class Queue:
 
@@ -82,8 +85,25 @@ class RoundRobinScheduling:
                 elapse += task.total_time
                 print(f"Done {task.name}. elapse: {elapse}")
 
-        print(f"Done all tasks. elapse: {elapse}")
+        print(f"\nDone all tasks. elapse: {elapse}")
 
 
 if __name__ == "__main__":
-    pass
+    tasks = [
+        Task('task1', 300),
+        Task('task2', 50),
+        Task('task3', 150),
+        Task('task4', 100)
+    ]
+    queue = Queue(len(tasks) + 1)
+    for task in tasks:
+        queue.enqueue(task)
+    r = RoundRobinScheduling(queue)
+    r.simulate()
+
+# Done task2. elapse: 150
+# Done task4. elapse: 350
+# Done task3. elapse: 500
+# Done task1. elapse: 600
+#
+# Done all tasks. elapse: 600
