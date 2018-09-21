@@ -8,7 +8,7 @@ int main(int argc, char const *argv[]) {
         0,
     };
     while (scanf("%s", s) != EOF) {
-        reversePolishNotation(&stack, s);
+        run(&stack, s);
     }
 
     printf("%d\n", pop(&stack));

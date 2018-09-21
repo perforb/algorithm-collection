@@ -3,6 +3,6 @@
 
 #include "stack.h"
 
-void reversePolishNotation(Stack *stack, char letters[]);
+void run(Stack *stack, char letters[]);
 
 #endif

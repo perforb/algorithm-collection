@@ -1,7 +1,7 @@
 #include<stdlib.h>
 #include "stack.h"
 
-void reversePolishNotation(Stack *stack, char s[]) {
+void run(Stack *stack, char s[]) {
     if (s[0] == '+') {
         int a = pop(stack);
         int b = pop(stack);
