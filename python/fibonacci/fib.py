@@ -1,3 +1,4 @@
+# recursive(very heavy)
 def fib1(n):
     if n < 2:
         return n
@@ -11,6 +12,7 @@ memo = {
 }
 
 
+# memorization(fast)
 def fib2(n):
     if n in memo:
         return memo[n]
@@ -18,6 +20,7 @@ def fib2(n):
     return memo[n]
 
 
+# loop(fast)
 def fib3(n):
     if n < 3:
         return 1
