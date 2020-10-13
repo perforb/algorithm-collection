@@ -4,15 +4,15 @@ package binarygap;
 public class BinaryGap {
 
   public static void main(String[] args) {
-    int answer = new BinaryGap().solution(20);
+    int answer = new BinaryGap().solution(529); // 1000010001
     System.out.println(answer);
   }
 
   private int solution(int N) {
-    if (!hasBinaryGap(N)) {
+    String binary = Integer.toBinaryString(N);
+    if (!hasBinaryGap(binary)) {
       return 0;
     }
-    String binary = Integer.toBinaryString(N);
     binary = normalize(binary);
     String[] gaps = binary.split("1");
     int count = 0;
@@ -25,8 +25,10 @@ public class BinaryGap {
     return count;
   }
 
-  private boolean hasBinaryGap(int n) {
-    String binary = Integer.toBinaryString(n);
+  private boolean hasBinaryGap(String binary) {
+    if (binary.length() < 3) {
+      return false;
+    }
     return binary.indexOf('0') >= 0 && binary.indexOf('1') >= 0;
   }
 
