@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 // https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/
+// excellent solutions:
+// https://funnelgarden.com/cyclic-rotation-codility-solution/
 public class CyclicRotation {
 
     public static void main(String[] args) {
@@ -15,7 +17,16 @@ public class CyclicRotation {
         System.out.println(Arrays.toString(answer)); // {9, 7, 6, 3, 8}
     }
 
-    private int[] solution(int[] A, int K) {
+    public int[] solution(int[] A, int K) {
+        int[] answer = new int[A.length];
+        for (int i = 0; i < A.length; i++) {
+            int index = (i + K) % A.length;
+            answer[index] = A[i];
+        }
+        return answer;
+    }
+
+    public int[] inefficientSolution(int[] A, int K) {
         if (!check(A, K)) {
             return A;
         }
