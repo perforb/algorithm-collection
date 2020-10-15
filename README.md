@@ -1,1 +1,1 @@
-# algorithm-collection
+# algorithm-sandbox
