@@ -8,7 +8,22 @@ public class BinaryGap {
         System.out.println(answer);
     }
 
-    private int solution(int N) {
+    public int solution(int N) {
+        String binary = Integer.toBinaryString(N);
+        int count = 0;
+        for (int i = 0; i < binary.length() - 1;) {
+            int a = binary.indexOf('1', i);
+            int b = binary.indexOf('1', a + 1);
+            if (b < 0) {
+                break;
+            }
+            count = Math.max(count, b - a - 1);
+            i = b;
+        }
+        return count;
+    }
+
+    public int anotherSolution(int N) {
         String binary = Integer.toBinaryString(N);
         if (!hasBinaryGap(binary)) {
             return 0;
