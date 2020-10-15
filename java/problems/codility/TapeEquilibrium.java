@@ -10,7 +10,7 @@ public class TapeEquilibrium {
         System.out.println(answer); // 1
     }
 
-    // O(n)
+    // O(N)
     public int solution(int[] A) {
         int sum = sum(A);
         int answer = Integer.MAX_VALUE;
@@ -24,7 +24,7 @@ public class TapeEquilibrium {
         return answer;
     }
 
-    // O(n*2)
+    // O(N*2)
     public int heavySolution(int[] A) {
         int answer = Integer.MAX_VALUE;
         int N = A.length;
