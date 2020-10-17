@@ -24,7 +24,7 @@ public class TapeEquilibrium {
         return answer;
     }
 
-    // O(N*2)
+    // O(N^2)
     public int heavySolution(int[] A) {
         int answer = Integer.MAX_VALUE;
         int N = A.length;
