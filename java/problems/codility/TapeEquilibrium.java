@@ -16,7 +16,7 @@ public class TapeEquilibrium {
         int answer = Integer.MAX_VALUE;
         int a = 0;
         int b;
-        for (int P = 0; P < A.length - 1; P++) {
+        for (int P = 0; P < A.length - 1; P++) { // -1 は left と right を比較するため. 省くと 0 が answer になってしまう.
             a += A[P];
             b = sum - a;
             answer = Math.min(answer, Math.abs(a - b));
