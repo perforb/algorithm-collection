@@ -21,13 +21,13 @@ public class MissingInteger {
 
     public int solution(int[] A) {
         Arrays.sort(A);
-        int min = 1;
+        int answer = 1;
         for (int i : A) {
-            if (i == min) {
-                min++;
+            if (i == answer) {
+                answer++;
             }
         }
-        return min;
+        return answer;
     }
 
     // O(N^2)
